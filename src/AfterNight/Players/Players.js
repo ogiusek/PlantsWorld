@@ -1,2 +1,2 @@
 import React from 'react';
-import style from "Players.module.css";
+import style from "./Players.module.css";

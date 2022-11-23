@@ -1,2 +1,2 @@
 import React from 'react';
-import style from "CanvasInterface.module.css";
+import style from "./CanvasInterface.module.css";

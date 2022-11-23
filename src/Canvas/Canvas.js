@@ -1,3 +1,2 @@
 import React from 'react';
-
-import style from "App.module.css";
+import style from "./Canvas.module.css";

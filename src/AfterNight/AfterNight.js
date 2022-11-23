@@ -1,2 +1,2 @@
 import React from 'react';
-import style from "AfterNight.module.css";
+import style from "./AfterNight.module.css";
