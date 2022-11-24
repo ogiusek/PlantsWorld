@@ -20,8 +20,8 @@ function App() {
     <div>
       {
         simulates ?
-          <NextGen get={get} set={set} /> :
-          <Canvas get={get} set={set} />
+          <Canvas get={get} set={set} /> :
+          <NextGen get={get} set={set} />
       }
     </div>
   );

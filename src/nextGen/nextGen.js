@@ -9,6 +9,7 @@ function NextGen(props) {
     const [position, setPosition] = useState(0);
     const [players, setPlayers] = useState(props.get.players);
     const [codes, setCodes] = useState(props.get.codes);
+
     return (
         <div className={style.main}>
             {position === 0 && <Options setPosition={setPosition} />}
