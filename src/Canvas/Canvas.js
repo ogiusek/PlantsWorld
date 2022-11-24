@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./Canvas.module.css";
 
-function Canvas() {
+function Canvas(props) {
 
 }
 
