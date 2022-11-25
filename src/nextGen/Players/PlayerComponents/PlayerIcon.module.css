@@ -1,0 +1,21 @@
+.icon {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+
+    margin-top: 10%;
+    border-radius: 10%;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    background-color: greenyellow;
+}
+
+.icon:hover div {
+    transform: scale(150%) rotate(360deg);
+}

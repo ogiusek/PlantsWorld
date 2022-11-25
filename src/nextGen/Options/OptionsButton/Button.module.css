@@ -13,12 +13,13 @@
 }
 
 .button div {
-    font-size: 5vw;
+    font-size: 3vw;
     transition: 1s;
 }
 
 .button img {
-    width: 70%;
+    max-width: 70%;
+    max-height: 50%;
     transition: 1s;
 }
 

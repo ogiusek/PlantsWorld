@@ -1,0 +1,83 @@
+.main {
+    width: 80vw;
+    height: 60vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.bar,
+.interface {
+    height: 100%;
+    background-color: rgb(062 095 138);
+
+    border-radius: 3vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 25%;
+    overflow-y: scroll;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 2vw;
+
+}
+
+.interface {
+    width: 72.5%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.interface div {
+    color: white;
+}
+
+/* .invisible-scrollbar::-webkit-scrollbar { */
+/* background-color: aqua; */
+/* display: none; */
+/* } */
+
+/* .visible-scrollbar, */
+/* .invisible-scrollbar, */
+/* .mostly-customized-scrollbar { */
+/* display: block; */
+/* overflow: auto; */
+/* background-color: RED; */
+/* } */
+
+/* ::-webkit-scrollbar { */
+/* width: 10vw; */
+/* max-height: 50%; */
+/* background-color: rebeccapurple; */
+/* border: solid 5px orange; */
+/* } */
+
+/* ::-webkit-scrollbar-button { */
+/* background-color: red; */
+/* width: auto; */
+/* } */
+
+/* ::-webkit-scrollbar-track { */
+/* height: ; */
+/* background-color: saddlebrown; */
+/* height: 10px; */
+/* } */
+
+/* ::-webkit-scrollbar-thumb { */
+/* background-color: blue; */
+/* border: solid 1px black; */
+/* } */

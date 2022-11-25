@@ -4,6 +4,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
+  transition: 0s;
 }
 
 code {
@@ -14,4 +17,10 @@ code {
 * {
   margin: 0;
   padding: 0;
+  transition: 1s;
+}
+
+.unselectable {
+  user-select: none;
+  pointer-events: none;
 }
