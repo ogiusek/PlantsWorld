@@ -16,10 +16,12 @@ function AddPlayer(props) {
             {/*confirm  */}<div onClick={() => {
                 props.addPlayer(name);
                 setAdd(false);
+                setName('');
             }} className={style.confirm} />
 
             {/*cancel   */}<div onClick={() => {
                 setAdd(false);
+                setName('');
             }} className={style.cancel} />
         </div>)}
     </div>);
