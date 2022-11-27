@@ -9,7 +9,7 @@ import Canvas from './Canvas/Canvas';
 
 function App() {
   const [players, setPlayers] = useState([player]);
-  const [codes, setCodes] = useState({ default: defaultAi });
+  const [codes, setCodes] = useState([defaultAi]);
   const [money, setMoney] = useState(0);
   const [simulates, setSimulates] = useState(false);
 

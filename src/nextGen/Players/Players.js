@@ -9,7 +9,7 @@ function Players(props) {
 
     return (<div className={style.main}>
         <PlayersBar setPlayers={props.setPlayers} players={props.players} setPlayer={setPlayer} player={player} />
-        <PlayerInterface players={props.players} player={player} />
+        <PlayerInterface players={props.players} player={player} setPlayers={props.setPlayers} codes={props.codes} />
     </div>);
 }
 

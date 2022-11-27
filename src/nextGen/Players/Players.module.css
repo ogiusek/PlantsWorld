@@ -46,6 +46,13 @@
     color: white;
 }
 
+.interface input {
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
 /* .invisible-scrollbar::-webkit-scrollbar { */
 /* background-color: aqua; */
 /* display: none; */

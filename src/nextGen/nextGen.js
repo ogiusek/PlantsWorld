@@ -13,7 +13,7 @@ function NextGen(props) {
     return (
         <div className={style.main}>
             {position === 0 && <Options setPosition={setPosition} />}
-            {position === 1 && <Players setPosition={setPosition} players={players} setPlayers={setPlayers} />}
+            {position === 1 && <Players setPosition={setPosition} players={players} setPlayers={setPlayers} codes={codes} />}
             {position === 2 && <Ai setPosition={setPosition} codes={codes} setCodes={setCodes} />}
         </div>
     );
