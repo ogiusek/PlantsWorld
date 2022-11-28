@@ -17,13 +17,13 @@ function App() {
   const set = { money: setMoney, players: setPlayers, simulates: setSimulates, codes: setCodes }
 
   return (
-    <div>
+    <React.Fragment>
       {
         simulates ?
           <Canvas get={get} set={set} /> :
           <NextGen get={get} set={set} />
       }
-    </div>
+    </React.Fragment>
   );
 }
 

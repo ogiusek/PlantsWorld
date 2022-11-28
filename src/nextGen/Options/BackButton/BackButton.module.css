@@ -1,0 +1,18 @@
+.button {
+    position: fixed;
+    left: 3vw;
+    top: 3vh;
+    border: none;
+    background-color: transparent;
+}
+
+.button img {
+    transform: rotate(-180deg);
+    width: 5vw;
+    transition: 1s;
+    /* filter: invert(100%); */
+}
+
+.button:hover img {
+    transform: rotate(180deg) scale(150%);
+}

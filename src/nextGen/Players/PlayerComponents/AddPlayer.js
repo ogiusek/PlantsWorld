@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import style from "./Player.module.css";
 import style from "./AddPlayer.module.css";
 
 function AddPlayer(props) {
