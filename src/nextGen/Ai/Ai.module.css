@@ -1,0 +1,10 @@
+.main {
+    aspect-ratio: 1/1;
+    width: 80%;
+    max-height: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
