@@ -2,7 +2,14 @@
     background-color: rgb(062 095 138);
 
     height: 100%;
-    width: 72.5%;
+    width: 70%;
+    padding-left: 1.25%;
+    padding-right: 1.25%;
 
     border-radius: 3vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }

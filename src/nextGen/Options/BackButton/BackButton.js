@@ -12,7 +12,7 @@ function BackButton() {
 
     return (
         <button className={style.button} onClick={back}>
-            <img src={url} />
+            <img src={url} className={'unselectable'} />
         </button>
     )
 }

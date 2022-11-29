@@ -9,18 +9,21 @@ function PlayerInterface(props) {
         props.setPlayers(array);
     };
     const selectHandler = (event) => {
-        console.log(props.players[props.player].code);
         let array = Array.from(props.players);
         array[props.player].code = props.codes[event.target.value];
         props.setPlayers(array);
     };
+    let optionsIndex;
+    let options = props.codes;
+    options = options.map((element, index) => {
+        const option = <option value={index} key={index}>{element.name}</option>;
+        element.name === props.players[props.player].code.name && (optionsIndex = index);
+        return option;
+    });
+
     return (<div className={style.interface}>
-        <select onChange={selectHandler} >
-            {props.codes.map((element, index) => {
-                return (
-                    <option value={index} key={index}>{element.name}</option>
-                );
-            })}
+        <select onChange={selectHandler} value={optionsIndex} >
+            {options}
         </select>
         <input type={'text'} value={props.players[props.player].name} onChange={nameChangeInputHandler} />
     </div>);
