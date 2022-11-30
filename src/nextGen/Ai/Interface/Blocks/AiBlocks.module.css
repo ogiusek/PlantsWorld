@@ -1,9 +1,7 @@
 .blocks {
     height: 90%;
-
+    width: 30%;
     display: flex;
-    /* justify-content: space-between; */
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 
@@ -15,12 +13,9 @@
     margin-bottom: auto;
 }
 
-
-
 .block {
-    /* block */
     width: 12.5vw;
-    aspect-ratio: 4/1;
+    height: 3.25vh;
 
     box-shadow: inset 0 0 25px 5px rgb(0, 0, 0, 0.3);
     transition: 1s;
@@ -62,12 +57,16 @@
 }
 
 .trash {
+    height: 100%;
     aspect-ratio: 1/1;
-    width: 20%;
+}
+
+.trash img {
+    width: 100%;
     filter: blur(1px);
 }
 
-.trash:hover {
+.trash:hover img {
     filter: blur(0px);
 }
 

@@ -30,17 +30,29 @@ function AiInterface(props) {
         props.setCodes(array);
     };
 
-    const remove = (indexToRemove) => {
+    const removeBlock = (indexToRemove) => {
         let array = Array.from(props.codes);
         array[props.index].ai = array[props.index].ai.filter((element, index) => {
             return indexToRemove != index;
         });
         props.setCodes(array);
     }
+
+    const removeAi = () => {
+        let array = Array.from(props.codes);
+        if (array.length < 2) {
+            return;
+        }
+        array = array.filter((element, index) => {
+            return props.index != index;
+        });
+        props.setCodes(array);
+    }
+
     return (<div className={style.main}>
         <DefaultBlocks addBlock={addBlock} />
-        <AiBlocks replace={replace} remove={remove} code={props.codes[props.index].ai} />
-        <AiSpecifications rename={rename} name={props.codes[props.index].name} />
+        <AiBlocks replace={replace} remove={removeBlock} code={props.codes[props.index].ai} />
+        <AiSpecifications rename={rename} name={props.codes[props.index].name} remove={removeAi} />
     </div>);
 }
 

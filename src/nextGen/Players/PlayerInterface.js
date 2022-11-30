@@ -1,4 +1,5 @@
 import React from "react";
+import Trash from "../Ai/Interface/Blocks/Trash";
 import style from "./Players.module.css";
 
 function PlayerInterface(props) {
@@ -21,11 +22,25 @@ function PlayerInterface(props) {
         return option;
     });
 
+    const remove = () => {
+        let array = Array.from(props.players);
+        if (array.length < 2) {
+            return;
+        }
+        array = array.filter((element, index) => {
+            return props.player != index;
+        });
+        props.setPlayers(array);
+    }
+
     return (<div className={style.interface}>
         <select onChange={selectHandler} value={optionsIndex} >
             {options}
         </select>
         <input type={'text'} value={props.players[props.player].name} onChange={nameChangeInputHandler} />
+        <div style={{ height: '5vh' }}>
+            <Trash remove={remove} />
+        </div>
     </div>);
 }
 
