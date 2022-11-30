@@ -3,8 +3,8 @@ import AuthContext from '../additionalFiles/AuthContext';
 import Canvas from '../Canvas/Canvas';
 import Ai from './Ai/Ai';
 import style from "./NextGen.module.css";
-import BackButton from './Options/BackButton/BackButton';
 
+import BackButton from './BackButton/BackButton';
 import Options from './Options/Options';
 import Players from './Players/Players';
 
@@ -13,6 +13,7 @@ function NextGen(props) {
 
     return (
         <AuthContext.Provider value={{
+            position: position,
             setPosition: setPosition
         }}>
             <div className={style.main}>
