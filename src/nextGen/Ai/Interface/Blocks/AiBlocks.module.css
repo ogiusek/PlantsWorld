@@ -67,7 +67,7 @@
 }
 
 .trash:hover img {
-    filter: blur(0px);
+    filter: blur(0px) invert(100%);
 }
 
 .arrows {
