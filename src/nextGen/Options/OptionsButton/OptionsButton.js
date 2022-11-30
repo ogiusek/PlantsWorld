@@ -10,7 +10,7 @@ function OptionsButton(props) {
     return (
         <button className={style.button + ' uselectable'} onClick={setPosition}>
             <img className="unselectable" src={buttonImages[props.value - 1]} />
-            <div>{props.text}</div>
+            <div className="unselectable">{props.text}</div>
         </button>
     );
 }

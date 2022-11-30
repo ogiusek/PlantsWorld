@@ -17,7 +17,7 @@ function PlayerInterface(props) {
     let optionsIndex;
     let options = props.codes;
     options = options.map((element, index) => {
-        const option = <option value={index} key={index}>{element.name}</option>;
+        const option = <option value={index} key={index} className='unselectable'>{element.name}</option>;
         element.name === props.players[props.player].code.name && (optionsIndex = index);
         return option;
     });
@@ -34,7 +34,7 @@ function PlayerInterface(props) {
     }
 
     return (<div className={style.interface}>
-        <select onChange={selectHandler} value={optionsIndex} >
+        <select onChange={selectHandler} value={optionsIndex}>
             {options}
         </select>
         <input type={'text'} value={props.players[props.player].name} onChange={nameChangeInputHandler} />

@@ -4,7 +4,7 @@ import Trash from "./Blocks/Trash";
 
 function AiSpecifications(props) {
     return (<div className={style.specifications}>
-        <label htmlFor="name">name</label>
+        <label htmlFor="name" className='unselectable'>name</label>
         <input value={props.name} onChange={(event) => {
             event.target.value !== '' && props.rename(event.target.value);
         }} />
