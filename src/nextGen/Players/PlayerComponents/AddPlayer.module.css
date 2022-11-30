@@ -26,8 +26,12 @@
     flex-wrap: wrap;
 }
 
-.icon:hover .img {
-    transform: scale(150%);
+.icon:hover {
+    filter: invert(100%);
+}
+
+.icon:hover .addImg {
+    transform: scale(150%) rotate(360deg);
 }
 
 .add input {

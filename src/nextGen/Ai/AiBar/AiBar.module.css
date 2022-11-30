@@ -27,6 +27,14 @@
     align-items: center;
 }
 
+.icon:hover {
+    filter: invert(100%);
+}
+
+.icon:hover div {
+    transform: scale(150%) rotate(360deg);
+}
+
 .icon:hover .img {
     transform: scale(150%);
 }
