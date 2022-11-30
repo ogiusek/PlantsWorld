@@ -37,11 +37,10 @@ function AiInterface(props) {
         });
         props.setCodes(array);
     }
-
     return (<div className={style.main}>
         <DefaultBlocks addBlock={addBlock} />
         <AiBlocks replace={replace} remove={remove} code={props.codes[props.index].ai} />
-        <AiSpecifications rename={rename} name={props.code[props.index].name} />
+        <AiSpecifications rename={rename} name={props.codes[props.index].name} />
     </div>);
 }
 
