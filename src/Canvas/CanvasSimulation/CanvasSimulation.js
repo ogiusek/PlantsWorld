@@ -1,26 +1,37 @@
 import React from "react";
 import style from "./CanvasSimulation.module.css";
 
+import fields from "./CanvasObjects/fields";
+
 function CanvasSimulation(props) {
+
     const canvas = document.getElementById('canvas');
     const c = canvas.getContext('2d');
 
-    const resize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
     const animate = () => {
         requestAnimationFrame(animate);
+        if (canvas.width !== window.innerWidth ||
+            canvas.height !== window.innerHeight) {
+            fields.OnResize();
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        fields.Update();
+        c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        c.fillStyle = "greenyellow";
+        c.fillRect(0, 0, canvas.width, canvas.height);
 
-        // c.clearRect(0, 0, innerWidth, innerHeight);
+        fields.Draw(c);
+        // c.beginPath();
+        // c.rect(0, 0, window.innerWidth, window.innerHeight);
+        // c.fill();
+        // c.stroke();
 
-        c.beginPath();
-        c.arc(window.innerWidth / 2, window.innerHeight / 2, 10, 0.0, Math.PI * 2, false);
-        c.fill();
+        // c.beginPath();
+        // c.arc(window.innerWidth / 2, window.innerHeight / 2, 50, 0.0, Math.PI * 2, false);
+        // c.fillStyle = "red";
+        // c.fill();
 
         // drawImage(image, dx, dy, dWidth, dHeight)
 
@@ -34,7 +45,7 @@ function CanvasSimulation(props) {
         animate();
     }
 
-    return (<div className={style.main} onResize={resize}></div>);
+    return (<div className={style.main}></div>);
 }
 
 export default CanvasSimulation;
