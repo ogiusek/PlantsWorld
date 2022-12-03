@@ -1,4 +1,4 @@
-function field(growSpeed, width, xIndex, yIndex) {
+function Field(growSpeed, width, xIndex, yIndex) {
     this.growStage = 0;
     this.planted = false;
     this.ready = false;
@@ -19,12 +19,11 @@ function field(growSpeed, width, xIndex, yIndex) {
     }
 
     this.draw = (c, grown, ungrown, soil) => {
+        const img = this.planted ?
+            this.growStage < 1 ? ungrown : grown :
+            soil;
         c.drawImage(
-            this.planted ?
-                this.growStage < 1 ?
-                    ungrown :
-                    grown :
-                soil,
+            img,
             this.xPos,
             this.yPos,
             this.width,
@@ -48,4 +47,4 @@ function field(growSpeed, width, xIndex, yIndex) {
     }
 }
 
-export default field;
+export default Field;

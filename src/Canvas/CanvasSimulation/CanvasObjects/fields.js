@@ -1,15 +1,14 @@
-import field from "./field";
+import Field from "./field";
 import canvasImages from "../CanvasImages";
 
-class fields {
-    static #vw = window.innerWidth / 100;
-    static #vh = window.innerHeight / 100;
+class Fields {
     static fieldsSize = 10;
     static growSpeed = 0.001;
-    static xPos = 50 * this.#vw;
-    static xPos = 50 * this.#vh;
+    // static xPos = 50 * this.#vw;
+    static xPos = 50 * window.innerHeight / 100;
 
-    static width = this.#vw > this.#vh ? (4.5 * this.#vh) : (4.5 * this.#vw);
+    static width = window.innerWidth > window.innerHeight ? (4.5 * window.innerHeight / 100) : (4.5 * (window.innerWidth / 100));
+
     static #soil = new Image();
     static #grownField = new Image();
     static #ungrownField = new Image();
@@ -23,7 +22,7 @@ class fields {
         for (let xIndex = 0; xIndex < this.fieldsSize; xIndex++) {
             let row = [];
             for (let yIndex = 0; yIndex < this.fieldsSize; yIndex++) {
-                row.push(new field(this.growSpeed, this.width, xIndex, yIndex));
+                row.push(new Field(this.growSpeed, this.width, xIndex, yIndex));
             }
             array.push(row);
         }
@@ -48,13 +47,10 @@ class fields {
         });
     }
 
-    static OnResize() {
-        this.#vw = window.innerWidth / 100;
-        this.#vh = window.innerHeight / 100;
-
-        this.xPos = 50 * this.vw;
-        this.xPos = 50 * this.vh;
-        this.width = this.#vw > this.#vh ? (4.5 * this.#vh) : (4.5 * this.#vw);
+    static Resize(vw, vh) {
+        this.xPos = 50 * vw;
+        this.xPos = 50 * vh;
+        this.width = vw > vh ? (4.5 * vh) : (4.5 * vw);
         this.#fields.map((element) => {
             element.map((object) => {
                 object.resize(this.width);
@@ -72,4 +68,4 @@ class fields {
         return array;
     }
 }
-export default fields;
+export default Fields;
