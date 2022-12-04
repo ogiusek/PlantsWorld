@@ -3,9 +3,7 @@ import canvasImages from "../CanvasImages";
 
 class Fields {
     static fieldsSize = 10;
-    static growSpeed = 0.001;
-    // static xPos = 50 * this.#vw;
-    static xPos = 50 * window.innerHeight / 100;
+    static growSpeed = 0.0001;
 
     static width = window.innerWidth > window.innerHeight ? (4.5 * window.innerHeight / 100) : (4.5 * (window.innerWidth / 100));
 
@@ -34,7 +32,7 @@ class Fields {
     static Update() {
         this.#fields.map((element) => {
             element.map((object) => {
-                object.update();
+                object.Update();
             });
         });
     }
@@ -42,18 +40,16 @@ class Fields {
     static Draw(c) {
         this.#fields.map((element) => {
             element.map((object) => {
-                object.draw(c, this.#grownField, this.#ungrownField, this.#soil);
+                object.Draw(c, this.#grownField, this.#ungrownField, this.#soil);
             });
         });
     }
 
     static Resize(vw, vh) {
-        this.xPos = 50 * vw;
-        this.xPos = 50 * vh;
         this.width = vw > vh ? (4.5 * vh) : (4.5 * vw);
         this.#fields.map((element) => {
             element.map((object) => {
-                object.resize(this.width);
+                object.Resize(this.width);
             });
         });
     }

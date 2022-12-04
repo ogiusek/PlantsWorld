@@ -31,10 +31,6 @@
     filter: invert(100%);
 }
 
-.icon:hover div {
-    transform: scale(150%) rotate(360deg);
-}
-
 .icon:hover .img {
     transform: scale(150%);
 }
@@ -42,10 +38,6 @@
 .selected {
     background-color: greenyellow;
 }
-
-/* .icon:hover button {
-    transform: scale(150%) rotate(360deg);
-} */
 
 .add {
     width: 50%;
@@ -70,6 +62,10 @@
     width: 40%;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.addImg:hover {
+    transform: scale(150%) rotate(360deg);
 }
 
 .addImg {

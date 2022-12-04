@@ -1,23 +1,20 @@
 import canvasImages from "../CanvasImages";
 import Drop from "./drop";
+import Silo from "./silo";
 
 class Drops {
     static drops = [];
     static #img = new Image();
 
-    static RemoveDrop(indexToRemove) {
-        this.drops = this.drops.filter((element, index) => {
-            return indexToRemove !== index;
+    static RemoveSiloDrop(follows) {
+        this.drops = this.drops.filter((element) => {
+            return element.follows !== follows;
         });
     }
 
     static AddDrop(xPos, yPos) {
         this.#img.src = canvasImages.drop;
-        this.drops.push(new Drop(xPos, yPos, this.#img));
-    }
-
-    static Take(index, object) {
-        this.drops[index].Take(object);
+        this.drops.push(new Drop(xPos, yPos, 2 * window.innerWidth / 100));
     }
 
     static Update() {
@@ -28,7 +25,7 @@ class Drops {
 
     static Draw(c) {
         this.drops.map((element) => {
-            element.Draw(c);
+            element.Draw(c, this.#img);
         });
     }
 

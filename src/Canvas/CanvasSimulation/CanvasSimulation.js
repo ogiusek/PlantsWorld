@@ -44,6 +44,7 @@ function CanvasSimulation(props) {
     }
     if (props.sim) {
         document.getElementById("canvas").style.zIndex = 1;
+        Main.Init(props.players);
         animate();
     }
 

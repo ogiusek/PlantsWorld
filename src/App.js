@@ -9,7 +9,7 @@ import NextGen from './NextGen/NextGen';
 
 function App() {
   const [players, setPlayers] = useState([player]);
-  const [codes, setCodes] = useState([defaultAi]);
+  const [codes, setCodes] = useState([{ name: defaultAi.name, ai: Array.from(defaultAi.ai) }]);
   const [money, setMoney] = useState(0);
   // const [simulates, setSimulates] = useState(false);
 

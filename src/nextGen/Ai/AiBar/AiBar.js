@@ -10,7 +10,7 @@ function AiBar(props) {
         let array = Array.from(props.codes);
         array.push({
             name: name,
-            ai: defaultAi.ai
+            ai: Array.from(defaultAi.ai)
         });
         props.setCodes(array);
     }

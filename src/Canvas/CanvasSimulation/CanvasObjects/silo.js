@@ -11,6 +11,7 @@ class Silo {
     static xPos = (window.innerWidth / 2) - this.width;
     static yPos = (window.innerHeight / 2) - this.width;
 
+    static silo = true;
 
     static Init() {
         this.#img.src = canvasImages.silo;
@@ -25,7 +26,7 @@ class Silo {
     }
 
     static Draw(c) {
-        c.strokeText(this.amount, this.xPos, this.yPos);
+        c.strokeText(this.amount, this.xPos + (this.width / 2), this.yPos);
         c.drawImage(
             this.#img,
             this.xPos,

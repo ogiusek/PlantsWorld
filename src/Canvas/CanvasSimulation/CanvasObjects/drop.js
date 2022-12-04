@@ -1,11 +1,13 @@
-function Drop(xPos, yPos, width, img) {
+function Drop(xPos, yPos, width) {
     this.xPos = xPos;
     this.yPos = yPos;
+    this.selected = false;
 
     this.follows = false;
     this.width = width;
 
     this.Take = (object) => {
+        this.selected = true;
         this.follows = object;
     }
 
@@ -22,7 +24,7 @@ function Drop(xPos, yPos, width, img) {
         }
     }
 
-    this.Draw = (c) => {
+    this.Draw = (c, img) => {
         c.drawImage(
             img,
             this.xPos,

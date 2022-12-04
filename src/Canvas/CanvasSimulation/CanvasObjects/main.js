@@ -1,25 +1,38 @@
 import Fields from "./fields";
 import Drops from "./drops";
 import Silo from "./silo";
+import Players from "./players";
 
 class Main {
     static vw = window.innerWidth / 100;
     static vh = window.innerHeight / 100;
 
+    static Init(players) {
+        Players.Init(players);
+    }
+
     static Update() {
         Fields.Update();
         Drops.Update();
+        Players.Update();
     }
 
-    static Draw(c) {
+    static #DrawBackground(c) {
         c.clearRect(0, 0, window.innerWidth, window.innerHeight);
         c.fillStyle = "greenyellow";
         c.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
         c.font = '2vw serif';
+        c.textAlign = 'center';
+    }
+
+    static Draw(c) {
+        this.#DrawBackground(c);
 
         Fields.Draw(c);
-        Drops.Draw(c);
         Silo.Draw(c);
+        Players.Draw(c);
+        Drops.Draw(c);
     }
 
     static Resize() {
