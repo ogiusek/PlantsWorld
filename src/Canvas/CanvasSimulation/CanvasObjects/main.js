@@ -2,6 +2,7 @@ import Fields from "./fields";
 import Drops from "./drops";
 import Silo from "./silo";
 import Players from "./players";
+import Shop from "./shop";
 
 class Main {
     static vw = window.innerWidth / 100;
@@ -27,13 +28,15 @@ class Main {
 
         Fields.Draw(c);
         Silo.Draw(c);
-        Players.Draw(c);
+        Shop.Draw(c);
         Drops.Draw(c);
+        Players.Draw(c);
     }
 
     static Reset(players) {
         Fields.Reset();
         Drops.Reset();
+        Shop.Reset();
         Players.Reset(players);
         Silo.Reset();
     }
@@ -44,6 +47,7 @@ class Main {
         this.vw = window.innerWidth / 100;
         this.vh = window.innerHeight / 100;
 
+        Shop.Resize(this.vw, this.vh);
         Fields.Resize(this.vw, this.vh);
         Silo.Resize(this.vw, this.vh);
         Drops.Resize(lastVw, lastVh, this.vw, this.vh);

@@ -1,6 +1,7 @@
 import aiEnum from "../../../additionalFiles/aiEnum";
 import Drops from "./drops";
 import Fields from "./fields";
+import Shop from "./shop";
 import Silo from "./silo";
 
 function CalcDist(oneX, oneY, twoX, twoY) {
@@ -16,7 +17,6 @@ function Player(name, code, speed, width) {
     this.objective = false;
 
     this.width = window.innerWidth > window.innerHeight ? (width * window.innerHeight / 100) : (width * window.innerWidth / 100);
-
 
     this.FindObjective = () => {
         for (let index = 0; index < code.length; index++) {
@@ -43,10 +43,12 @@ function Player(name, code, speed, width) {
                     });
                     break;
                 case aiEnum.sell:
-                    if (Silo.amount > 0
-                        // && !Shop.selected
-                    ) {
-                        // sell
+                    if (Silo.amount > 0) {
+                        this.objective = {
+                            type: aiEnum.sell,
+                            object: Shop
+                        };
+                        found = true;
                     }
                     break;
                 case aiEnum.transport:
@@ -105,8 +107,9 @@ function Player(name, code, speed, width) {
                     this.objective = false;
                     break;
                 case aiEnum.sell:
-                    this.objective = false;
-
+                    if (!this.objective.object.Work()) {
+                        this.objective = false;
+                    }
                     break;
                 case aiEnum.transport:
                     if (this.objective.object.silo) {

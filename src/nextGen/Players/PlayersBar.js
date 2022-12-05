@@ -8,7 +8,7 @@ import defaultAi from "../../additionalFiles/defaultAi";
 function PlayersBar(props) {
     const addPlayer = (name) => {
         let array = Array.from(props.players);
-        array.push({ name: name, code: defaultAi });
+        array.push({ name: name, code: props.codes[0] });
         props.setPlayers(array);
     }
 
