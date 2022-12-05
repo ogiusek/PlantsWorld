@@ -1,4 +1,5 @@
 import canvasImages from "../CanvasImages";
+import Score from "./score";
 import Silo from "./silo";
 
 let shopImg = new Image();
@@ -17,24 +18,14 @@ class Shop {
             this.work--;
             return true;
         } else {
-            this.work = this.#defaultWork;
-            Silo.Sell();
+            if (Silo.amount > 0) {
+                this.work = this.#defaultWork;
+                Silo.Sell();
+                Score.Sell();
+            }
             return false;
-            // add score
         }
     }
-
-    // static Update = () => {
-    //     if (used && Silo.amount > 0) {
-    //         if (this.work > 0) {
-    //             this.work--;
-    //         } else {
-    //             this.work = this.#defaultWork;
-    //             Silo.Sell();
-    //             // add score
-    //         }
-    //     }
-    // };
 
     static Draw = (c) => {
         c.drawImage(

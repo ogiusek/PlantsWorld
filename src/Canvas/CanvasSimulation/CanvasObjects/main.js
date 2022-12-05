@@ -3,6 +3,7 @@ import Drops from "./drops";
 import Silo from "./silo";
 import Players from "./players";
 import Shop from "./shop";
+import Score from "./score";
 
 class Main {
     static vw = window.innerWidth / 100;
@@ -31,6 +32,7 @@ class Main {
         Shop.Draw(c);
         Drops.Draw(c);
         Players.Draw(c);
+        Score.Draw(c);
     }
 
     static Reset(players) {
@@ -39,6 +41,7 @@ class Main {
         Shop.Reset();
         Players.Reset(players);
         Silo.Reset();
+        Score.Reset();
     }
 
     static Resize() {
