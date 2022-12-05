@@ -44,7 +44,7 @@ class Main {
         Score.Draw(c, this.timer);
         if (this.timer <= 0 && this.timer !== false) {
             console.log(this.timer);
-            c.strokeText('End score = ' + Score.score, window.innerWidth / 2, 4 * window.innerWidth / 100);
+            c.strokeText('End Score: ' + Score.score, window.innerWidth / 2, 8 * window.innerWidth / 100);
         }
     }
 
