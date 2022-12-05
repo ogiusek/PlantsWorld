@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./CanvasSimulation.module.css";
 
-import Fields from "./CanvasObjects/fields";
 import Main from "./CanvasObjects/main";
 
 let req;
@@ -14,12 +13,12 @@ function CanvasSimulation(props) {
             document.getElementById("canvas").style.zIndex = -1;
             return;
         }
+
         req = requestAnimationFrame(animate);
+
         if (canvas.width !== window.innerWidth ||
             canvas.height !== window.innerHeight) {
-
             Main.Resize()
-
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
@@ -29,7 +28,7 @@ function CanvasSimulation(props) {
     if (props.sim) {
         cancelAnimationFrame(req);
         document.getElementById("canvas").style.zIndex = 1;
-        Main.Reset(props.players);
+        Main.Reset(props.players, props.clock);
         animate();
     }
 

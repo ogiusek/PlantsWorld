@@ -9,10 +9,19 @@ class Main {
     static vw = window.innerWidth / 100;
     static vh = window.innerHeight / 100;
 
+    static calcTime = false;
+    static #defaultTimer = 10800;
+    static timer = this.#defaultTimer;
+
     static Update() {
-        Fields.Update();
-        Drops.Update();
-        Players.Update();
+        if (this.timer > 0 || this.timer === false) {
+            if (this.calcTime) {
+                this.timer--;
+            }
+            Fields.Update();
+            Drops.Update();
+            Players.Update();
+        }
     }
 
     static #DrawBackground(c) {
@@ -32,10 +41,16 @@ class Main {
         Shop.Draw(c);
         Drops.Draw(c);
         Players.Draw(c);
-        Score.Draw(c);
+        Score.Draw(c, this.timer);
+        if (this.timer <= 0 && this.timer !== false) {
+            console.log(this.timer);
+            c.strokeText('End score = ' + Score.score, window.innerWidth / 2, 4 * window.innerWidth / 100);
+        }
     }
 
-    static Reset(players) {
+    static Reset(players, timer) {
+        this.calcTime = timer;
+        this.timer = timer ? this.#defaultTimer : false;
         Fields.Reset();
         Drops.Reset();
         Shop.Reset();
