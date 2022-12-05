@@ -7,10 +7,6 @@ class Main {
     static vw = window.innerWidth / 100;
     static vh = window.innerHeight / 100;
 
-    static Init(players) {
-        Players.Reset(players);
-    }
-
     static Update() {
         Fields.Update();
         Drops.Update();
@@ -51,7 +47,7 @@ class Main {
         Fields.Resize(this.vw, this.vh);
         Silo.Resize(this.vw, this.vh);
         Drops.Resize(lastVw, lastVh, this.vw, this.vh);
-
+        Players.Resize(lastVw, lastVh, this.vw, this.vh);
     }
 }
 

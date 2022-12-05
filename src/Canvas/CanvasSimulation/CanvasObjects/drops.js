@@ -1,6 +1,5 @@
 import canvasImages from "../CanvasImages";
 import Drop from "./drop";
-import Silo from "./silo";
 
 class Drops {
     static drops = [];
@@ -14,7 +13,7 @@ class Drops {
 
     static AddDrop(xPos, yPos) {
         this.#img.src = canvasImages.drop;
-        this.drops.push(new Drop(xPos, yPos, 2 * window.innerWidth / 100));
+        this.drops.push(new Drop(xPos, yPos));
     }
 
     static Update() {

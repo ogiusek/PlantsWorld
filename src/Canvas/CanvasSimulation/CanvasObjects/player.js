@@ -15,7 +15,8 @@ function Player(name, code, speed, width) {
 
     this.objective = false;
 
-    this.width = width / 2;
+    this.width = window.innerWidth > window.innerHeight ? (width * window.innerHeight / 100) : (width * window.innerWidth / 100);
+
 
     this.FindObjective = () => {
         for (let index = 0; index < code.length; index++) {
@@ -155,8 +156,10 @@ function Player(name, code, speed, width) {
         c.strokeText(name, this.xPos, this.yPos + (window.innerWidth / 100 * 0.75));
     }
 
-    this.Resize = () => {
-
+    this.Resize = (lastVw, lastVh, vw, vh) => {
+        this.width = vw > vh ? (width * vh) : (width * vw);
+        this.xPos = this.xPos * ((vw * 100) / lastVw);
+        this.yPos = this.yPos * ((vh * 100) / lastVh);
     }
 }
 

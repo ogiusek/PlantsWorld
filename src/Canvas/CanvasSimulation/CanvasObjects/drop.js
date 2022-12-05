@@ -1,10 +1,10 @@
-function Drop(xPos, yPos, width) {
+function Drop(xPos, yPos) {
     this.xPos = xPos;
     this.yPos = yPos;
     this.selected = false;
 
     this.follows = false;
-    this.width = width;
+    this.width = window.innerWidth > window.innerHeight ? (2 * window.innerHeight / 100) : (2 * window.innerWidth / 100);
 
     this.Take = (object) => {
         this.selected = true;
@@ -12,9 +12,9 @@ function Drop(xPos, yPos, width) {
     }
 
     this.Resize = (lastVw, lastVh, vw, vh) => {
-        this.width = 3 * vw;
-        this.xPos = this.xPos * (lastVw / vw);
-        this.yPos = this.yPos * (lastVh / vh);
+        this.width = vw > vh ? (2 * vh) : (2 * vw);
+        this.xPos = this.xPos * ((vw * 100) / lastVw);
+        this.yPos = this.yPos * ((vh * 100) / lastVh);
     }
 
     this.Update = () => {
