@@ -3,7 +3,7 @@ import canvasImages from "../CanvasImages";
 
 class Fields {
     static fieldsSize = 10;
-    static growSpeed = 0.0001;
+    static growSpeed = 0.001;
 
     static width = window.innerWidth > window.innerHeight ? (4.5 * window.innerHeight / 100) : (4.5 * (window.innerWidth / 100));
 
@@ -45,6 +45,10 @@ class Fields {
         });
     }
 
+    static Reset() {
+        this.#fields = this.#initFields();
+    }
+
     static Resize(vw, vh) {
         this.width = vw > vh ? (4.5 * vh) : (4.5 * vw);
         this.#fields.map((element) => {
@@ -64,4 +68,5 @@ class Fields {
         return array;
     }
 }
+
 export default Fields;

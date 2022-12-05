@@ -8,7 +8,7 @@ class Main {
     static vh = window.innerHeight / 100;
 
     static Init(players) {
-        Players.Init(players);
+        Players.Reset(players);
     }
 
     static Update() {
@@ -35,6 +35,13 @@ class Main {
         Drops.Draw(c);
     }
 
+    static Reset(players) {
+        Fields.Reset();
+        Drops.Reset();
+        Players.Reset(players);
+        Silo.Reset();
+    }
+
     static Resize() {
         const lastVw = this.vw * 100;
         const lastVh = this.vh * 100;
@@ -42,8 +49,9 @@ class Main {
         this.vh = window.innerHeight / 100;
 
         Fields.Resize(this.vw, this.vh);
-        Drops.Resize(lastVw, lastVh, this.vw, this.vh);
         Silo.Resize(this.vw, this.vh);
+        Drops.Resize(lastVw, lastVh, this.vw, this.vh);
+
     }
 }
 

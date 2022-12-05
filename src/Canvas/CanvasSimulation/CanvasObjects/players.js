@@ -5,7 +5,7 @@ class Players {
     static #defaultWidth = 5;
     static #defaultSpeed = 1.5;
 
-    static Init(players) {
+    static Reset(players) {
         this.players = [];
         players.map((element) => {
             this.players.push(new Player(element.name, element.code.ai, this.#defaultSpeed, window.innerWidth / 100 * this.#defaultWidth));
@@ -21,6 +21,12 @@ class Players {
     static Draw(c) {
         this.players.map((element) => {
             element.Draw(c);
+        });
+    }
+
+    static Resize() {
+        this.players.map((element) => {
+            element.Resize();
         });
     }
 }

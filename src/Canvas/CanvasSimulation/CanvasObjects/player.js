@@ -154,6 +154,10 @@ function Player(name, code, speed, width) {
         c.fill();
         c.strokeText(name, this.xPos, this.yPos + (window.innerWidth / 100 * 0.75));
     }
+
+    this.Resize = () => {
+
+    }
 }
 
 export default Player;

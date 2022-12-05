@@ -47,6 +47,7 @@ function AiInterface(props) {
             return props.index != index;
         });
         props.setCodes(array);
+        props.setSelected(0);
     }
 
     return (<div className={style.main}>

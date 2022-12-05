@@ -5,7 +5,7 @@
     width: 25%;
     border-radius: 3vw;
 
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -29,10 +29,6 @@
 
 .icon:hover {
     filter: invert(100%);
-}
-
-.icon:hover .img {
-    transform: scale(150%);
 }
 
 .selected {
@@ -64,6 +60,7 @@
     background-repeat: no-repeat;
 }
 
+.icon:hover div:not(.add, .add *),
 .addImg:hover {
     transform: scale(150%) rotate(360deg);
 }

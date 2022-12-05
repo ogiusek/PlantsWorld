@@ -35,6 +35,10 @@ class Silo {
             this.width);
     }
 
+    static Reset() {
+        this.amount = 0;
+    }
+
     static Resize(vw, vh) {
         this.width = vw > vh ?
             vh * this.defaultSize :

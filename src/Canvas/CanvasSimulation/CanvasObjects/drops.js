@@ -29,6 +29,10 @@ class Drops {
         });
     }
 
+    static Reset() {
+        this.drops = [];
+    }
+
     static Resize(lastVw, lastVh, vw, vh) {
         this.drops.map((element) => {
             element.Resize(lastVw, lastVh, vw, vh);

@@ -9,7 +9,7 @@ function Ai(props) {
     return (
         <div className={style.main}>
             <AiBar codes={props.codes} setCodes={props.setCodes} selected={selected} setSelected={setSelected} />
-            <AiInterface codes={props.codes} setCodes={props.setCodes} index={selected} />
+            <AiInterface codes={props.codes} setCodes={props.setCodes} index={selected} setSelected={setSelected} />
         </div>
     );
 }

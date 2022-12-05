@@ -9,11 +9,13 @@ function PlayerInterface(props) {
         change !== '' && (array[props.player].name = change);
         props.setPlayers(array);
     };
+
     const selectHandler = (event) => {
         let array = Array.from(props.players);
         array[props.player].code = props.codes[event.target.value];
         props.setPlayers(array);
     };
+
     let optionsIndex;
     let options = props.codes;
     options = options.map((element, index) => {
@@ -31,6 +33,7 @@ function PlayerInterface(props) {
             return props.player != index;
         });
         props.setPlayers(array);
+        props.setPlayer(0);
     }
 
     return (<div className={style.interface}>

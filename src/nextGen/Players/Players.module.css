@@ -22,7 +22,7 @@
 
 .bar {
     width: 25%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     display: flex;
     justify-content: center;
@@ -46,10 +46,32 @@
 }
 
 .interface input {
+    min-width: 20%;
+    min-height: 10%;
     border: none;
     background-color: transparent;
     color: white;
     text-align: center;
+}
+
+.interface select {
+    min-width: 20%;
+    min-height: 10%;
+    background-color: transparent;
+    color: white;
+    border: 1px black solid;
+
+    appearance: none;
+    text-align: center;
+    outline: 0;
+}
+
+.interface select::-ms-expand {
+    display: none;
+}
+
+.interface option {
+    background-color: blue;
 }
 
 /* .invisible-scrollbar::-webkit-scrollbar { */

@@ -4,8 +4,8 @@ import style from "./CanvasSimulation.module.css";
 import Fields from "./CanvasObjects/fields";
 import Main from "./CanvasObjects/main";
 
+let req;
 function CanvasSimulation(props) {
-
     const canvas = document.getElementById('canvas');
     const c = canvas.getContext('2d');
 
@@ -14,7 +14,7 @@ function CanvasSimulation(props) {
             document.getElementById("canvas").style.zIndex = -1;
             return;
         }
-        requestAnimationFrame(animate);
+        req = requestAnimationFrame(animate);
         if (canvas.width !== window.innerWidth ||
             canvas.height !== window.innerHeight) {
 
@@ -23,28 +23,13 @@ function CanvasSimulation(props) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-
         Main.Update();
         Main.Draw(c);
-
-        // c.beginPath();
-        // c.rect(0, 0, window.innerWidth, window.innerHeight);
-        // c.fill();
-        // c.stroke();
-
-        // c.beginPath();
-        // c.arc(window.innerWidth / 2, window.innerHeight / 2, 50, 0.0, Math.PI * 2, false);
-        // c.fillStyle = "red";
-        // c.fill();
-
-        // c.beginPath();
-        // c.arc(this.xPos, this.yPos, radius, 0.0, Math.PI * 2, false);
-        // c.fillStyle = this.color;
-        // c.fill();
     }
     if (props.sim) {
+        cancelAnimationFrame(req);
         document.getElementById("canvas").style.zIndex = 1;
-        Main.Init(props.players);
+        Main.Reset(props.players);
         animate();
     }
 

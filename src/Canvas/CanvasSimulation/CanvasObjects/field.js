@@ -1,9 +1,9 @@
 import Drops from "./drops";
 
 function Field(growSpeed, width, xIndex, yIndex) {
-    this.growStage = 0;
-    this.planted = false;
-    this.ready = false;
+    this.growStage = 1;
+    this.planted = true;
+    this.ready = true;
     this.selected = false;
     this.growSpeed = growSpeed;
 
