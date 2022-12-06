@@ -6,13 +6,15 @@ import CanvasSpeed from "./CanvasSpeed";
 
 let req;
 let speed = 1;
-
 function CanvasSimulation(props) {
     const canvas = document.getElementById('canvas');
     const c = canvas.getContext('2d');
     const setSpeed = (arg) => {
         speed = arg;
     }
+    const getSpeed = () => {
+        return speed;
+    };
 
     const animate = () => {
         if (!props.sim) {
@@ -40,7 +42,7 @@ function CanvasSimulation(props) {
     }
 
     return (<div className={style.main}>
-        <CanvasSpeed speed={speed} setSpeed={setSpeed} />
+        <CanvasSpeed speed={getSpeed} setSpeed={setSpeed} />
     </div>);
 }
 
