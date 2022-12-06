@@ -6,7 +6,7 @@ function PlayerInterface(props) {
     const nameChangeInputHandler = (event) => {
         let array = Array.from(props.players);
         const change = event.target.value;
-        change !== '' && (array[props.player].name = change);
+        change.length < 13 && (array[props.player].name = change);
         props.setPlayers(array);
     };
 

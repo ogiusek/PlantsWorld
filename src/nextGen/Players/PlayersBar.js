@@ -22,6 +22,7 @@ function PlayersBar(props) {
                     <PlayerIcon
                         name={element.name}
                         selected={props.player === index}
+                        index={index}
                         key={index}
                         setPlayer={setPlayer} />
                 );

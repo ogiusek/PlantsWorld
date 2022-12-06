@@ -9,9 +9,11 @@ import aiEnum from "../../../additionalFiles/aiEnum";
 function AiInterface(props) {
     // codes setCodes index
     const addBlock = (block) => {
-        let array = Array.from(props.codes);
-        array[props.index].ai.push(aiEnum[block]);
-        props.setCodes(array);
+        if (props.codes[props.index].ai.length < 10) {
+            let array = Array.from(props.codes);
+            array[props.index].ai.push(aiEnum[block]);
+            props.setCodes(array);
+        }
     };
 
     const replace = (from, to) => {

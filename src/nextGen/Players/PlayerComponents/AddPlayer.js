@@ -9,7 +9,9 @@ function AddPlayer(props) {
         {!add && <div className={style.addImg} />}
         {add && (<div className={"unselectabe " + style.add}>
             {/*input    */}<input type={'text'} value={name} onChange={(event) => {
-                setName(event.target.value)
+                if (event.target.value.length < 13) {
+                    setName(event.target.value);
+                }
             }} />
 
             {/*confirm  */}<div onClick={() => {
