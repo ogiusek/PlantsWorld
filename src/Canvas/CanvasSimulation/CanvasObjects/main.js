@@ -5,6 +5,8 @@ import Players from "./players";
 import Shop from "./shop";
 import Score from "./score";
 
+import { speed } from "../CanvasSimulation";
+
 class Main {
     static vw = window.innerWidth / 100;
     static vh = window.innerHeight / 100;
@@ -14,13 +16,15 @@ class Main {
     static timer = this.#defaultTimer;
 
     static Update() {
-        if (this.timer > 0 || this.timer === false) {
-            if (this.calcTime) {
-                this.timer--;
+        for (let index = 0; index < speed; index++) {
+            if (this.timer > 0 || this.timer === false) {
+                if (this.calcTime) {
+                    this.timer--;
+                }
+                Fields.Update();
+                Drops.Update();
+                Players.Update();
             }
-            Fields.Update();
-            Drops.Update();
-            Players.Update();
         }
     }
 
